@@ -2,10 +2,14 @@ import os
 import numpy as np
 import matplotlib.pyplot as plt
 import mimetypes
+import random
+import math
 
 import cv2
 
 from scripts import background_removal_lyst
+
+random.seed = 42
 
 dirname = os.path.dirname
 base_path = dirname(dirname(__file__))
@@ -13,6 +17,8 @@ base_path = dirname(dirname(__file__))
 src_image_path = os.path.join(base_path,'original_images')
 transformed_image_path = os.path.join(base_path,'transformed_images')
 bg_removed_image_path = os.path.join(base_path,'bg-removed_images')
+
+
 
 def img_transform(src_path, dst_path):
     img_bgr = cv2.imread(src_path)
@@ -46,21 +52,56 @@ def img_transform(src_path, dst_path):
     img_rs500x500 = cv2.resize(img_bgr, dsize=(500,500))
     cv2.imwrite(file+'_'+transformation+ext,img_rs500x500)
 
-    # 4) Rotate 90 degrees CCW
-    transformation = 'rot90CCW'
-    rows, cols = img_bgr.shape[:2]
-    M = cv2.getRotationMatrix2D((round(cols/2),round(cols/2)),90,1)
-    img_rot90CCW = cv2.warpAffine(img_bgr,M,(rows,cols))
-    cv2.imwrite(file+'_'+transformation+ext,img_rot90CCW)
+    # 4) Rotate random degrees
+    transformation = 'randrot'
 
-    # 5) Image subset (middle X% of each axis)
-    transformation = 'centerXpct'
-    x = .8
-    img_sub = img_bgr[
-        int(round((1-x)/2*img_bgr.shape[0],0)):int(round((x+(1-x)/2)*img_bgr.shape[0],0)),
-        int(round((1-x)/2*img_bgr.shape[1],0)):int(round((x+(1-x)/2)*img_bgr.shape[1],0))
-    ]
-    cv2.imwrite(file+'_'+transformation+ext,img_sub)
+    # rotate function from http://john.freml.in/opencv-rotation
+    def rotate_about_center(src, angle, scale=1.):
+        w = src.shape[1]
+        h = src.shape[0]
+        rangle = np.deg2rad(angle)  # angle in radians
+        # now calculate new image width and height
+        nw = (abs(np.sin(rangle)*h) + abs(np.cos(rangle)*w))*scale
+        nh = (abs(np.cos(rangle)*h) + abs(np.sin(rangle)*w))*scale
+        # ask OpenCV for the rotation matrix
+        rot_mat = cv2.getRotationMatrix2D((nw*0.5, nh*0.5), angle, scale)
+        # calculate the move from the old center to the new center combined
+        # with the rotation
+        rot_move = np.dot(rot_mat, np.array([(nw-w)*0.5, (nh-h)*0.5,0]))
+        # the move only affects the translation, so update the translation
+        # part of the transform
+        rot_mat[0,2] += rot_move[0]
+        rot_mat[1,2] += rot_move[1]
+        return cv2.warpAffine(src, rot_mat, (int(math.ceil(nw)), int(math.ceil(nh))), flags=cv2.INTER_LANCZOS4)
+
+    angle = random.randrange(0,360,90)
+    print(angle)
+    img_rot = rotate_about_center(img_bgr,angle)
+    cv2.imwrite(file+'_'+transformation+ext,img_rot)
+
+    # 5) Random Image Subset
+    transformation = 'randsub'
+
+    rows, cols = img_bgr.shape[:2]
+    # will take x_size_pct percent of the x-axis, starting at column x_loc
+    x_pct_range = (.1,.9)
+    x_size_pct = random.uniform(x_pct_range[0],x_pct_range[1])
+    x_size = int(round(x_size_pct * cols))
+
+    y_pct_range = (.1,.9)
+    y_size_pct = random.uniform(y_pct_range[0],y_pct_range[1])
+    y_size = int(round(y_size_pct * rows))
+
+    #if x_size is 0.7, then x_loc (the left-bound of the window) can be 0-0.3
+    x_loc_pct = random.uniform(0,1-x_size_pct)
+    x_loc = int(round(x_loc_pct * cols))
+    y_loc_pct = random.uniform(0,1-y_size_pct)
+    y_loc = int(round(y_loc_pct * rows))
+    #print(x_loc,x_size)
+    #print(y_loc,y_size)
+    img_rsub = img_bgr[y_loc:(y_loc+y_size),x_loc:(x_loc+x_size)]
+
+    cv2.imwrite(file+'_'+transformation+ext,img_rsub)
 
     # 6) Gaussian Blur
     transformation = 'gauss'
