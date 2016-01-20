@@ -74,7 +74,7 @@ def img_transform(src_path, dst_path):
         rot_mat[1,2] += rot_move[1]
         return cv2.warpAffine(src, rot_mat, (int(math.ceil(nw)), int(math.ceil(nh))), flags=cv2.INTER_LANCZOS4)
 
-    angle = random.randrange(0,360,90)
+    angle = random.randrange(0,360,1)
     print(angle)
     img_rot = rotate_about_center(img_bgr,angle)
     cv2.imwrite(file+'_'+transformation+ext,img_rot)
@@ -117,4 +117,3 @@ for img in os.listdir(src_image_path):
         background_removal_lyst.remove_bg(file=os.path.join(src_image_path,img),
                                      output_file=os.path.join(bg_removed_image_path,file+'_bg-removed'+ext),
                                      show_intermediate=False)
-

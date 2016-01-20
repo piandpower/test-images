@@ -49,13 +49,13 @@ def remove_bg(file,output_file=None,show_intermediate=False):
 
     # 4) Gaussian blur the Sobel
     #!!!!!!! PARAMETER !!!!!!!!! (gauss kernel size)
-    img_gauss = cv2.GaussianBlur(img_sobel, (3,3), 0)
+    img_gauss = cv2.GaussianBlur(img_sobel, (9,9), 0)
     # if show_intermediate:
     #     plt.imshow(img_gauss, cmap='gray')
     #     plt.show()
 
     # 5) Threshold-filter to drop away (to pure black) anything that's not white-ish
-    threshold = 20 #!!!!!!! PARAMETER !!!!!!!!! (threshold)
+    threshold = 40 #!!!!!!! PARAMETER !!!!!!!!! (threshold)
     ret,img_tozero = cv2.threshold(img_gauss,threshold,255,cv2.THRESH_TOZERO)
     # if show_intermediate:
     #     plt.imshow(img_tozero, cmap='gray')
@@ -76,6 +76,12 @@ def remove_bg(file,output_file=None,show_intermediate=False):
     diff = (6,6,6)
     cv2.floodFill(image=img_tozero_bgr,mask=mask,seedPoint=(0,0),
                  newVal=(255,0,255),loDiff=diff,upDiff=diff, flags=4)
+    cv2.floodFill(image=img_tozero_bgr,mask=mask,seedPoint=(img_tozero.shape[1]-1,0),
+             newVal=(255,0,255),loDiff=diff,upDiff=diff, flags=4)
+    cv2.floodFill(image=img_tozero_bgr,mask=mask,seedPoint=(img_tozero.shape[1]-1,img_tozero.shape[0]-1),
+             newVal=(255,0,255),loDiff=diff,upDiff=diff, flags=4)
+    cv2.floodFill(image=img_tozero_bgr,mask=mask,seedPoint=(0,img_tozero.shape[0]-1),
+             newVal=(255,0,255),loDiff=diff,upDiff=diff, flags=4)
     # if show_intermediate:
     #     plt.imshow(img_tozero_bgr)
     #     plt.show()
