@@ -14,7 +14,7 @@ random.seed = 42
 dirname = os.path.dirname
 base_path = dirname(dirname(__file__))
 
-src_image_path = os.path.join(base_path,'original_images')
+src_image_path = os.path.join(base_path,'atf_images/images')
 transformed_image_path = os.path.join(base_path,'transformed_images')
 bg_removed_image_path = os.path.join(base_path,'bg-removed_images')
 
@@ -111,9 +111,9 @@ def img_transform(src_path, dst_path):
 for img in os.listdir(src_image_path):
     file, ext = os.path.splitext(img)
     print(img)
-    if mimetypes.guess_type(img)[0] is not None and mimetypes.guess_type(img)[0].startswith('image'):
+    if True: #mimetypes.guess_type(img)[0] is not None and mimetypes.guess_type(img)[0].startswith('image'):
         img_transform(os.path.join(src_image_path,img),
-                      os.path.join(transformed_image_path,img))
-        background_removal_lyst.remove_bg(file=os.path.join(src_image_path,img),
-                                     output_file=os.path.join(bg_removed_image_path,file+'_bg-removed'+ext),
-                                     show_intermediate=False)
+                      os.path.join(transformed_image_path,img+'.jpg'))
+        #background_removal_lyst.remove_bg(file=os.path.join(src_image_path,img),
+        #                             output_file=os.path.join(bg_removed_image_path,file+'_bg-removed'+ext),
+        #                             show_intermediate=False)
