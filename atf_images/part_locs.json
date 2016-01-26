@@ -1,0 +1,74 @@
+{
+	"0":[ 
+			{"parts": {
+				"barrel": {
+			    	"location": [[200,590],[60,175]]},
+			    "butt": {
+			    	"location": [[130,100],[40,80]]},
+			    "clip": {
+			    	"location": [[230,265],[90,45]],
+			    	"type": "banana"},
+			    "handle": {
+			    	"location": [[180,160],[50,50]]},
+			    "secondary_handle": {
+			    	"location": [[170,380],[50,80]]},
+			    "trigger": {
+					"location": [[165,215],[30,30]]}
+				}
+			}
+		],
+	"1":[
+			{"parts": {
+				"barrel": {
+					"location": [[135,310],[50,100]]},
+				"butt": {
+			    	"location": [[180,60],[40,50]]},
+			    "clip": {
+			    	"location": [[225,172],[60,45]],
+			    	"type": "banana"},
+			    "handle": {
+			    	"location": [[205,105],[35,20]]},
+			    "secondary_handle": {
+			    	"location": [[165,210],[35,45]]},
+			    "trigger": {
+					"location": [[190,125],[20,20]]}
+				}
+			}
+		],
+	"2":[
+			{"parts": {
+				"barrel": {
+					"location": [[935,2250],[150,380]]},
+				"butt": {
+			    	"location": [[1030,500],[200,400]]},
+			    "clip": {
+			    	"location": [[1250,1420],[320,250]],
+			    	"type": "banana"},
+			    "handle": {
+			    	"location": [[1160,920],[170,140]]},
+			    "secondary_handle": {
+			    	"location": [[950,1750],[150,300]]},
+			    "trigger": {
+					"location": [[1070,1110],[100,130]]}
+				}
+			}
+		],
+	"4":[
+			{"parts": {
+				"barrel": {
+					"location": [[935,2250],[150,380]]},
+				"butt": {
+			    	"location": [[1030,500],[200,400]]},
+			    "clip": {
+			    	"location": [[1250,1420],[320,250]],
+			    	"type": "banana"},
+			    "handle": {
+			    	"location": [[1160,920],[170,140]]},
+			    "secondary_handle": {
+			    	"location": [[950,1750],[150,300]]},
+			    "trigger": {
+					"location": [[1070,1110],[100,130]]}
+				}
+			}
+		]
+}
