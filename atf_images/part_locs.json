@@ -38,6 +38,120 @@
 	"2":[
 			{"parts": {
 				"barrel": {
+					"location": [[10,127],[10,25]]},
+				"butt": {
+			    	"location": [[16,31],[15,25]]},
+			    "clip": {
+			    	"location": [[27,82],[18,18]],
+			    	"type": "banana"},
+			    "handle": {
+			    	"location": [[22,55],[13,12]]},
+			    "secondary_handle": {
+			    	"location": [[10,100],[10,20]]},
+			    "trigger": {
+					"location": [[17,67],[11,13]]}
+				}
+			},
+			{"parts": {
+				"barrel": {
+					"location": [[50,127],[13,28]]},
+				"butt": {
+			    	"location": [[60,31],[17,27]]},
+			    "clip": {
+			    	"location": [[69,82],[20,18]],
+			    	"type": "banana"},
+			    "handle": {
+			    	"location": [[65,55],[13,12]]},
+			    "secondary_handle": {
+			    	"location": [[50,100],[10,20]]},
+			    "trigger": {
+					"location": [[59,65],[10,13]]}
+				}
+			},
+			{"parts": {
+				"barrel": {
+					"location": [[90,127],[10,25]]},
+				"butt": {
+			    	"location": [[100,35],[17,23]]},
+			    "clip": {
+			    	"location": [[110,85],[20,18]],
+			    	"type": "banana"},
+			    "handle": {
+			    	"location": [[105,58],[13,12]]},
+			    "secondary_handle": {
+			    	"location": [[92,104],[10,19]]},
+			    "trigger": {
+					"location": [[100,68],[11,13]]}
+				}
+			},
+			{"parts": {
+				"barrel": {
+					"location": [[132,127],[11,25]]},
+				"butt": {
+			    	"location": [[140,35],[17,26]]},
+			    "clip": {
+			    	"location": [[150,85],[20,18]],
+			    	"type": "banana"},
+			    "handle": {
+			    	"location": [[145,58],[13,12]]},
+			    "secondary_handle": {
+			    	"location": [[132,104],[10,19]]},
+			    "trigger": {
+					"location": [[140,68],[11,13]]}
+				}
+			},
+			{"parts": {
+				"barrel": {
+					"location": [[173,136],[13,30]]},
+				"butt": {
+			    	"location": [[180,35],[17,26]]},
+			    "clip": {
+			    	"location": [[192,85],[22,18]],
+			    	"type": "banana"},
+			    "handle": {
+			    	"location": [[187,58],[13,12]]},
+			    "secondary_handle": {
+			    	"location": [[174,104],[12,19]]},
+			    "trigger": {
+					"location": [[182,68],[11,13]]}
+				}
+			},
+			{"parts": {
+				"barrel": {
+					"location": [[213,136],[13,30]]},
+				"butt": {
+			    	"location": [[222,34],[17,26]]},
+			    "clip": {
+			    	"location": [[233,83],[22,18]],
+			    	"type": "banana"},
+			    "handle": {
+			    	"location": [[229,57],[14,13]]},
+			    "secondary_handle": {
+			    	"location": [[215,104],[12,19]]},
+			    "trigger": {
+					"location": [[223,68],[11,13]]}
+				}
+			},
+			{"parts": {
+				"barrel": {
+					"location": [[253,131],[15,34]]},
+				"butt": {
+			    	"location": [[262,30],[17,29]]},
+			    "clip": {
+			    	"location": [[273,80],[20,20]],
+			    	"type": "banana"},
+			    "handle": {
+			    	"location": [[269,54],[14,14]]},
+			    "secondary_handle": {
+			    	"location": [[255,102],[12,21]]},
+			    "trigger": {
+					"location": [[263,65],[11,13]]}
+				}
+			}
+		],
+	"3":[
+			{"parts": {
+				"barrel": {
 					"location": [[935,2250],[150,380]]},
 				"butt": {
 			    	"location": [[1030,500],[200,400]]},
@@ -56,18 +170,277 @@
 	"4":[
 			{"parts": {
 				"barrel": {
-					"location": [[935,2250],[150,380]]},
+					"location": [[55,210],[15,43]]},
 				"butt": {
-			    	"location": [[1030,500],[200,400]]},
+			    	"location": [[54,37],[30,37]]},
 			    "clip": {
-			    	"location": [[1250,1420],[320,250]],
+			    	"location": [[79,119],[32,30]],
 			    	"type": "banana"},
 			    "handle": {
-			    	"location": [[1160,920],[170,140]]},
+			    	"location": [[69,74],[22,20]]},
 			    "secondary_handle": {
-			    	"location": [[950,1750],[150,300]]},
+			    	"location": [[52,153],[19,27]]},
 			    "trigger": {
-					"location": [[1070,1110],[100,130]]}
+					"location": [[63,92],[10,15]]}
+				}
+			}
+		],
+	"5":[
+			{"parts": {
+				"barrel": {
+					"location": [[460,604],[400,500]]},
+				"butt": {
+			    	"location": [[2100,3400],[700,650]]},
+			    "clip": {
+			    	"location": [[1750,1800],[600,500]],
+			    	"type": "banana"},
+			    "handle": {
+			    	"location": [[2150,2780],[530,350]]},
+			    "scope": {
+			    	"location": [[750,2350],[550,900]]},
+			    "secondary_handle": {
+			    	"location": [[850,1250],[450,400]]},
+			    "trigger": {
+					"location": [[1730,2400],[250,300]]}
+			    }
+			}
+		],
+	"6":[
+			{"parts": {
+				"barrel": {
+					"location": [[80,530],[40,90]]},
+				"butt": {
+			    	"location": [[95,115],[45,100]]},
+			    "clip": {
+			    	"location": [[150,330],[85,65]],
+			    	"type": "banana"},
+			    "handle": {
+			    	"location": [[130,210],[45,35]]},
+			    "secondary_handle": {
+			    	"location": [[75,408],[35,63]]},
+			    "trigger": {
+					"location": [[105,250],[25,35]]}
+				}
+			}
+		],
+	"7":[
+			{"parts": {
+				"barrel": {
+					"location": [[94,216],[65,190]]},
+			    "handle": {
+			    	"location": [[198,124],[120,95]]},
+			    "trigger": {
+					"location": [[140,213],[50,55]]}
+				}
+			},
+			{"parts": {
+				"barrel": {
+					"location": [[268,293],[60,180]]},
+				"clip": {
+			    	"location": [[370,440],[60,100]]},
+			    "handle": {
+			    	"location": [[325,222],[110,95]]},
+			    "trigger": {
+					"location": [[314,309],[50,65]]}
+				}
+			},
+			{"parts": {
+				"barrel": {
+					"location": [[449,220],[60,185]]},
+			    "handle": {
+			    	"location": [[540,117],[130,95]]},
+			    "trigger": {
+					"location": [[500,200],[50,65]]}
+				}
+			}
+		],
+	"8":[
+			{"parts": {
+				"barrel": {
+					"location": [[82,118],[18,65]]},
+			    "handle": {
+			    	"location": [[118,80],[38,35]]},
+			    "trigger": {
+					"location": [[100,112],[20,25]]}
+				}
+			}
+		],
+	"9":[
+			{"parts": {
+				"barrel": {
+					"location": [[53,110],[25,90]]},
+			    "handle": {
+			    	"location": [[103,153],[50,46]]},
+			    "trigger": {
+					"location": [[78,107],[20,33]]}
+				}
+			}
+		],
+	"10":[
+			{"parts": {
+				"barrel": {
+					"location": [[38,60],[38,60]]},
+			    "handle": {
+			    	"location": [[75,28],[60,28]]},
+			    "trigger": {
+					"location": [[70,60],[32,34]]}
+				}
+			}
+		],
+	"11":[
+			{"parts": {
+				"barrel": {
+					"location": [[76,62],[25,51]]},
+			    "handle": {
+			    	"location": [[120,48],[32,28]]},
+			    "trigger": {
+					"location": [[97,72],[18,24]]}
+				}
+			}
+		],
+	"12":[
+			{"parts": {
+				"barrel": {
+					"location": [[85,190],[85,165]]},
+			    "handle": {
+			    	"location": [[225,285],[95,65]]},
+			    "trigger": {
+					"location": [[170,225],[60,60]]},
+				"clip": {
+					"location": [[380,320],[100,65]]}
+				}
+			}
+		],
+	"13":[
+			{"parts": {
+				"barrel": {
+					"location": [[145,410],[110,220]]},
+			    "handle": {
+			    	"location": [[325,335],[155,90]]},
+			    "trigger": {
+					"location": [[230,450],[65,90]]}
+				}
+			}
+		],
+	"14":[
+			{"parts": {
+				"barrel": {
+					"location": [[167,510],[35,105]]},
+				"butt": {
+			    	"location": [[202,111],[60,105]]},
+			    "handle": {
+			    	"location": [[235,211],[42,42]]},
+			    "secondary_handle": {
+			    	"location": [[171,380],[35,65]]},
+			    "trigger": {
+					"location": [[214,253],[25,30]]}
+				}
+			}
+		],
+	"15":[
+			{"parts": {
+				"barrel": {
+					"location": [[150,250],[25,50]]},
+				"butt": {
+			    	"location": [[165,40],[30,40]]},
+			    "clip": {
+			    	"location": [[185,128],[30,22]],
+			    	"type": "banana"},
+			    "handle": {
+			    	"location": [[185,83],[22,25]]},
+			    "secondary_handle": {
+			    	"location": [[152,177],[20,37]]},
+			    "trigger": {
+					"location": [[175,108],[15,20]]}
+				}
+			}
+		],
+	"16":[
+			{"parts": {
+				"barrel": {
+					"location": [[272,200],[30,35]]},
+				"butt": {
+			    	"location": [[211,44],[38,43]]},
+			    "clip": {
+			    	"location": [[285,111],[33,22]],
+			    	"type": "banana"},
+			    "handle": {
+			    	"location": [[260,73],[26,22]]},
+			    "scope": {
+			    	"location": [[215,130],[25,25]]},
+			    "secondary_handle": {
+			    	"location": [[257,160],[28,37]]},
+			    "trigger": {
+					"location": [[255,100],[15,17]]}
+				}
+			}
+		],
+	"17":[
+			{"parts": {
+				"barrel": {
+					"location": [[172,538],[55,105]]},
+				"butt": {
+			    	"location": [[170,90],[70,90]]},
+			    "handle": {
+			    	"location": [[225,170],[50,49]]},
+			    "secondary_handle": {
+			    	"location": [[174,393],[43,77]]},
+			    "trigger": {
+					"location": [[205,230],[21,32]]}
+				}
+			}
+		],
+	"18":[
+			{"parts": {
+				"barrel": {
+					"location": [[154,153],[50,120]]},
+				"butt": {
+			    	"location": [[228,510],[75,95]]},
+			    "handle": {
+			    	"location": [[242,370],[40,33]]},
+			    "secondary_handle": {
+			    	"location": [[156,168],[40,95]]},
+			    "scope": {
+			    	"location": [[115,295],[40,145]]},
+			    "trigger": {
+					"location": [[229,325],[27,33]]}
+				}
+			}
+		],
+	"19":[
+			{"parts": {
+				"barrel": {
+					"location": [[195,144],[90,144]]},
+				"butt": {
+			    	"location": [[92,556],[65,80]]},
+			    "clip": {
+			    	"location": [[265,335],[75,55]],
+			    	"type": "banana"},
+			    "handle": {
+			    	"location": [[205,460],[60,55]]},
+			    "secondary_handle": {
+			    	"location": [[195,130],[85,130]]},
+			    "scope": {
+			    	"location": [[80,245],[55,95]]},
+			    "trigger": {
+					"location": [[185,385],[33,40]]}
+				}
+			}
+		],
+	"20":[
+			{"parts": {
+				"barrel": {
+					"location": [[346,410],[110,410]]},
+				"butt": {
+			    	"location": [[440,1750],[310,240]]},
+			    "clip": {
+			    	"location": [[730,1410],[130,85]]},
+			    "handle": {
+			    	"location": [[552,1426],[200,135]]},
+			    "secondary_handle": {
+			    	"location": [[357,1012],[110,220]]},
+			    "trigger": {
+					"location": [[469,1267],[90,115]]}
 				}
 			}
 		]
