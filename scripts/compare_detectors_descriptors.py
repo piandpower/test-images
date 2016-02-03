@@ -5,13 +5,6 @@ from matplotlib import pyplot as plt
 import numpy as np
 import pandas as pd
 
-image_pairs = [
-    {
-        "image1":  {"filename":"../original_images/01.jpg"},
-        "image2":  {"filename":"../original_images/02.jpg"}
-    }
-]
-
 both_list = ['brisk','akaze','kaze','orb']#,'sift','surf']
 det_list = ['fast','agast','gftt','mser','star']
 desc_list = ['freak','latch','lucid']
@@ -142,10 +135,11 @@ def wrapper(reference, unknown, detector_alg,
     fig.gca().set_title("keypoints: {}, detector: {}, Matcher: {}".format(
         detector_alg, descriptor_alg,
         "FLANN" if use_flann else "Brute Force"))
+
     if good_pts is not None:
-        return len(reference_features['kps']),len(unknown_features['kps']),len(good_pts)
+        return len(reference_features['kps']),len(unknown_features['kps']),len(good_pts), fig
     else:
-        return len(reference_features['kps']),len(unknown_features['kps']),0
+        return len(reference_features['kps']),len(unknown_features['kps']),0, fig
 
 
 
@@ -163,11 +157,14 @@ def compareDetectorsDescriptors(image_file1,image_file2,outfile=None):
                   columns=['detector','descriptor'])
     df['combo'] = df['detector']+df['descriptor']
     df = df.set_index('combo')
+    output_img_dir = '../results/images_'+os.path.split(outfile)[-1].split('.')[0].split('results')[1]
+    if not os.path.exists('../results/images_'+os.path.split(outfile)[-1].split('.')[0].split('results')[1]):
+        os.makedirs(output_img_dir)
     for row in df.index:
         print(row)
         print(df.loc[row,'detector'])
         print(df.loc[row,'descriptor'])
-        df.loc[row,'img1_kps'],df.loc[row,'img2_kps'],df.loc[row,'num_matches'] = wrapper(images["image1"],
+        df.loc[row,'img1_kps'],df.loc[row,'img2_kps'],df.loc[row,'num_matches'], fig = wrapper(images["image1"],
                                             images["image2"],
                                             detector_alg=df.loc[row,'detector'],
                                             descriptor_alg=df.loc[row,'descriptor'])#,
@@ -176,12 +173,7 @@ def compareDetectorsDescriptors(image_file1,image_file2,outfile=None):
         df.loc[row,'pct_match'] = pct_match
         print(df.loc[row,'num_matches'])
         print('-'*40)
+        plot_path = os.path.join(output_img_dir,os.path.split(outfile)[-1].split('.')[0]+'_'+df.loc[row,'detector']+'_'+df.loc[row,'descriptor']+'.jpg')
+        plt.savefig(plot_path)
     df.sort_values('num_matches', ascending=False).to_csv(outfile)
 
-for image_pair in image_pairs:
-    image1_name = os.path.split(image_pair['image1']['filename'])[-1].split('.')[0]
-    image2_name = os.path.split(image_pair['image2']['filename'])[-1].split('.')[0]
-    outfile="../results/results_"+image1_name+'_vs_'+image2_name+'.csv'
-    compareDetectorsDescriptors('../original_images/01.jpg',
-                            '../original_images/02.jpg',
-                            outfile=outfile)
